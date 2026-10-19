@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ember &amp; Olive | Charcoal Grill Restaurant</title>
+  <meta name="description" content="Ember & Olive is a charcoal grill restaurant serving fire-cooked meats, fresh mezze and house desserts.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="#home" class="logo">Ember &amp; Olive</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="nav" class="nav">
+      <a href="#about">Our story</a>
+      <a href="#menu">Menu</a>
+      <a href="#visit">Hours &amp; location</a>
+      <a href="#reserve" class="btn btn-small">Book a table</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-inner">
+        <h1>Everything here is cooked over live charcoal.</h1>
+        <p>Slow-marinated meats, flatbread from our clay oven, and mezze made each morning. Open daily for lunch and dinner.</p>
+        <div class="hero-actions">
+          <a href="#reserve" class="btn">Book a table</a>
+          <a href="#menu" class="btn btn-ghost">See the menu</a>
+        </div>
+      </div>
+      <img class="hero-img" src="images/hero.svg" alt="Skewers of lamb and vegetables grilling over glowing charcoal">
+      <div class="hero-flame" aria-hidden="true"></div>
+    </section>
+
+    <section id="about" class="section about">
+      <h2>Our story</h2>
+      <div class="about-grid">
+        <p>We opened Ember &amp; Olive with one rule: the fire does the work. Our grill burns hardwood charcoal from open until close, and every dish is built around what it does to meat, vegetables and bread.</p>
+        <p>Lamb is marinated for 24 hours. Olive oil is pressed by a family farm we visit each autumn. Nothing on the menu is frozen, and nothing is rushed.</p>
+        <ul class="facts">
+          <li><strong>24 hrs</strong> marinade on every cut</li>
+          <li><strong>100%</strong> charcoal, no gas</li>
+          <li><strong>Daily</strong> bread from the clay oven</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="menu" class="section menu">
+      <h2>Menu</h2>
+      <div class="tabs" role="tablist" aria-label="Menu categories">
+        <button class="tab active" data-filter="all" role="tab">All</button>
+        <button class="tab" data-filter="starters" role="tab">Starters</button>
+        <button class="tab" data-filter="grill" role="tab">From the grill</button>
+        <button class="tab" data-filter="sides" role="tab">Sides</button>
+        <button class="tab" data-filter="desserts" role="tab">Desserts</button>
+      </div>
+      <ul class="menu-list" id="menuList"></ul>
+    </section>
+
+    <section id="reserve" class="section reserve">
+      <div class="reserve-box">
+        <h2>Book a table</h2>
+        <p>Tell us when you're coming. We'll confirm by phone or email within the hour.</p>
+        <form id="reserveForm" novalidate>
+          <div class="field">
+            <label for="name">Full name</label>
+            <input type="text" id="name" name="name" autocomplete="name">
+            <small class="error" id="nameError"></small>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" autocomplete="email">
+            <small class="error" id="emailError"></small>
+          </div>
+          <div class="row">
+            <div class="field">
+              <label for="date">Date</label>
+              <input type="date" id="date" name="date">
+              <small class="error" id="dateError"></small>
+            </div>
+            <div class="field">
+              <label for="time">Time</label>
+              <select id="time" name="time">
+                <option value="">Choose a time</option>
+                <option>12:00</option><option>13:00</option><option>14:00</option>
+                <option>18:00</option><option>19:00</option><option>20:00</option><option>21:00</option>
+              </select>
+              <small class="error" id="timeError"></small>
+            </div>
+            <div class="field">
+              <label for="guests">Guests</label>
+              <input type="number" id="guests" name="guests" min="1" max="12" value="2">
+              <small class="error" id="guestsError"></small>
+            </div>
+          </div>
+          <button type="submit" class="btn">Request booking</button>
+          <p class="form-success" id="formSuccess" role="status" hidden></p>
+        </form>
+      </div>
+    </section>
+
+    <section id="visit" class="section visit">
+      <h2>Hours &amp; location</h2>
+      <div class="visit-grid">
+        <div>
+          <h3>Opening hours</h3>
+          <table class="hours">
+            <tr><td>Monday to Thursday</td><td>12:00 to 22:00</td></tr>
+            <tr><td>Friday and Saturday</td><td>12:00 to 23:30</td></tr>
+            <tr><td>Sunday</td><td>13:00 to 21:00</td></tr>
+          </table>
+        </div>
+        <div>
+          <h3>Find us</h3>
+          <address>
+            12 Garden Road<br>
+            Old Town Square<br>
+            <a href="tel:+10000000000">+1 000 000 0000</a><br>
+            <a href="mailto:hello@emberandolive.example">hello@emberandolive.example</a>
+          </address>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> Ember &amp; Olive. University project.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
